@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css">
 </head>
+
 <body>
-  
+
   <!-- #region project -->
-   <div class="wrapper">
+  <div class="wrapper">
     <!-- #region menu-->
-     <div class="menu">
+    <div class="menu">
       <nav>
         <div class=""><a href="#">home</a></div>
         <div class=""><a href="#">about</a></div>
@@ -26,17 +29,62 @@
       <div class="item"></div>
     </div>
     <!-- #endregion menu-->
+
+
+    <!-- #region slider -->
+    <div class="slider">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="public/images/image1.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="public/images/image2.jpg" alt=""></div>
+          <!-- <div class="swiper-slide">Slide 3</div>
+          <div class="swiper-slide">Slide 4</div>
+          <div class="swiper-slide">Slide 5</div>
+          <div class="swiper-slide">Slide 6</div>
+          <div class="swiper-slide">Slide 7</div>
+          <div class="swiper-slide">Slide 8</div>
+          <div class="swiper-slide">Slide 9</div> -->
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <!-- #endregion -->
+
   </div>
   <!-- #endregion -->
 
 
+
+  <script src="node_modules/swiper/swiper-bundle.min.js"></script>
   <script>
-    let bars=document.querySelector(".bars")
-    let menu=document.querySelector(".menu")
-    bars.addEventListener("click",function(){
+    let bars = document.querySelector(".bars")
+    let menu = document.querySelector(".menu")
+    bars.addEventListener("click", function () {
       menu.classList.toggle("active")
       bars.classList.toggle("changebgbard")
     })
+
+
+
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 0,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
   </script>
 </body>
+
 </html>
